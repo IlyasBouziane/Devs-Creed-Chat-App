@@ -5,25 +5,29 @@ const http = require('http')
 const socketio = require('socket.io')
 const PORT = process.env.PORT || 3000
 
+
+const formatMessage = require('./utils/formatMessage')
+const DEVMASTER = 'The Master' 
+
 const app = express()
 const server = http.createServer(app)
 const io  = socketio(server)
 io.on('connection',socket => {
 
     //Welcome message
-    socket.emit('message','Welcome To the Brotherhood !')
+    socket.emit('message',formatMessage(DEVMASTER,'Welcome To the Brotherhood !'))
 
     //When a user enters the chat
-    socket.broadcast.emit('message','A Dev has joined the chat')
+    socket.broadcast.emit('message',formatMessage(DEVMASTER,'A dev has joined the chat'))
 
     //When a user leaves the chat
     socket.on('disconnect', () => {
-        io.emit('message', 'A Dev has left the chat')
+        io.emit('message', formatMessage(DEVMASTER,'A dev has left the chat'))
     })
 
     //Messages from the chat 
     socket.on('chatMessage',message => {
-        io.emit('message',message)
+        io.emit('message',formatMessage('DEV',message))
     })
 })
 

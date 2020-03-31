@@ -5,6 +5,7 @@ const socket = io()
 
 // all messages received and displayed in the chat
 socket.on('message', messageReceived => {
+    console.log(messageReceived)
     displayMessage(messageReceived)
     //Scroll down
     chatMessages.scrollTop = chatMessages.scrollHeight
@@ -25,9 +26,9 @@ function displayMessage(message) {
     const div = document.createElement('div')
     div.classList.add('message')
     div.innerHTML = `
-                        <p class="meta">Brad <span>9:12pm</span></p>
+                        <p class="meta">${message.devname} <span>${message.time}</span></p>
 						<p class="text">
-							${message}
+							${message.messageText}
 						</p>
     `
 
