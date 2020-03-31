@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css">
-  <title>ChatCord App</title>
+  <title>Devs'Creed App</title>
 </head>
 <body>
   <div class="chat-container">
@@ -16,14 +16,9 @@
     <main class="chat-main">
       <div class="chat-sidebar">
         <h3><i class="fas fa-comments"></i> Room Name:</h3>
-        <h2 id="room-name">JavaScript</h2>
+        <h2 id="room-name"></h2>
         <h3><i class="fas fa-users"></i> Devs</h3>
-        <ul id="users">
-          <li>Brad</li>
-          <li>John</li>
-          <li>Mary</li>
-          <li>Paul</li>
-          <li>Mike</li>
+        <ul id="devs">
         </ul>
       </div>
       <div class="chat-messages">
@@ -44,6 +39,7 @@
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.3/qs.min.js"></script> 
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/main.js"></script>
 </body>
