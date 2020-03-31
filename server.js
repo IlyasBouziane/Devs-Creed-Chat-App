@@ -20,6 +20,11 @@ io.on('connection',socket => {
     socket.on('disconnect', () => {
         io.emit('message', 'A Dev has left the chat')
     })
+
+    //Messages from the chat 
+    socket.on('chatMessage',message => {
+        io.emit('message',message)
+    })
 })
 
 app.use(express.static(path.join(__dirname,'public')))
