@@ -51,12 +51,13 @@ io.on('connection',socket => {
     // When a user leaves the chat
     socket.on('disconnect', () => {
         const dev = devLeave(socket.id)
+        console.log(dev)
         if(dev){
             io.to(dev.room).emit('message', formatMessage(DEVMASTER, `${dev.devname} has left the chat`))
              // Send infos about the room and its users
              io.to(dev.room).emit('roomDevs',{
-                devs : getDevsRoom(room)  ,
-                room 
+                devs : getDevsRoom(dev.room)  ,
+                room : dev.room
         })
         }   
     })
