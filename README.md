@@ -15,3 +15,15 @@ Who played Assassin's Creed games like me ? I love this game ! and I got inspire
 **Moment.js** for formatting dates and times
 
 ## Demo
+
+<img src="screenshots/ss1.PNG"/>
+
+<img src="screenshots/ss2.PNG"/>
+
+<img src="screenshots/ss3.PNG"/>
+
+<img src="screenshots/ss4.PNG"/>
+
+<img src="screenshots/ss5.PNG"/>
+
+<img src="screenshots/ss6.PNG"/>
